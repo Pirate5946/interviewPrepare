@@ -74,7 +74,6 @@ public class TraverseTree {
         if (root != null) {
             Stack<Node> stack = new Stack<>();
             stack.push(root);
-//            System.out.println(root.value + " ");
             while (!stack.isEmpty()) {
                 Node head = stack.pop();
                 System.out.println(head.value + " ");
@@ -105,10 +104,41 @@ public class TraverseTree {
                     System.out.println(root.value + " ");
                     root = root.right;
                 }
-
             }
         }
+    }
 
+    /**
+     * 后序遍历（两个栈）
+     */
+    public void postOrderUnRecur(Node root) {
+        System.out.println("pos-order :");
+        if (root != null) {
+            Stack<Node> s1 = new Stack<>();
+            Stack<Node> s2 = new Stack<>();
+            s1.push(root);
+            while (!s1.isEmpty()) {
+                root = s1.pop();
+                s2.push(root);
+                if (root.left != null) {
+                    s1.push(root.left);
+                }
+                if (root.right != null) {
+                    s1.push(root.right);
+                }
+            }
+            while (!s2.isEmpty()) {
+                System.out.println(s2.pop().value + " ");
+            }
+        }
+        System.out.println();
+    }
 
+    /**
+     * 后序遍历 （一个栈）
+     * TODO
+     */
+    public void postOrderUnRecur2(Node root) {
+        return;
     }
 }
