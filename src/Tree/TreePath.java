@@ -51,10 +51,12 @@ public class TreePath {
     // add data structure your need
     public static void main(String[] args) {
         TreeNode treeNode1 = new TreeNode(3);
-        TreeNode treeNode2 = treeNode1.left;
-        treeNode2 = new TreeNode(2);
-        TreeNode treeNode3 = treeNode2.left;
+        TreeNode treeNode11 = treeNode1.left;
+        treeNode11 = new TreeNode(2);
+        TreeNode treeNode3 = treeNode11.left;
         treeNode3 = new TreeNode(2);
+        TreeNode treeNode111 = treeNode11.left;
+        treeNode111 = new TreeNode(2);
         int[] intArray = {};
         System.out.println(longestPath(treeNode1, intArray));
     }
@@ -74,11 +76,10 @@ public class TreePath {
         // implement your method
         if (root == null)
             return 0;
-        else {
-            int left = longestPath(root.left, nodeValues);
-            int right = longestPath(root.right, nodeValues);
-            return Math.max(left, right);
-        }
+        int left = longestPath(root.left, nodeValues);
+        int right = longestPath(root.right, nodeValues);
+//            return Math.max(left+1, right+1);
+        return (left > right) ? (left + 1) : (right + 1);
     }
 }
 
