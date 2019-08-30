@@ -1,4 +1,4 @@
-package Collections;/**
+package collections;/**
  * Created by lt on 2019/1/31.
  */
 

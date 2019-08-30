@@ -1,4 +1,4 @@
-package Collections;
+package collections;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
